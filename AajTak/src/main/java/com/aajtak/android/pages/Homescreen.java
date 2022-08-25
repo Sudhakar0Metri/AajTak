@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.openqa.selenium.support.PageFactory;
 
+import com.aventstack.extentreports.gherkin.model.And;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -38,6 +40,16 @@ public class Homescreen {
 	
 	@AndroidFindBy(id="in.AajTak.headlines:id/ll_topnews_tempLayout")
 	private AndroidElement dailyCapsuleBanner;
+
+	@AndroidFindBy(xpath="//android.widget.ImageView[@content-desc=\"Aaj Tak Image\"]")
+	private AndroidElement dailyCapsuleBannnerCopy;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='राजनीति']")
+	private AndroidElement rajnitiSection;
+	
+	@AndroidFindBy(id="in.AajTak.headlines:id/tvHBITitle")
+	private AndroidElement FirstNews;
+	
 
 	@AndroidFindBy(id = "in.AajTak.headlines:id/tv_goodmorning")
 	private AndroidElement namaskar;
@@ -84,6 +96,14 @@ public class Homescreen {
 	@AndroidFindBy(id = "in.AajTak.headlines:id/tv_title")
 	private AndroidElement otherStoryTitle;
 
+	@AndroidFindBy(id ="(in.AajTak.headlines:id/tv_visualstory_title)[2]")
+	private AndroidElement visualStoryTitle;
+	
+	@AndroidFindBy(id = "in.AajTak.headlines:id/clVisualStoriesBase")
+	private AndroidElement visualStory;
+	
+	@AndroidFindBy(id ="in.AajTak.headlines:id/tvNewsTitle")
+	private AndroidElement FirstNewstitle;
 	// Title of Video in Homescreen
 	@AndroidFindBy(id = "in.AajTak.headlines:id/news_title")
 	private AndroidElement videoTitle;
@@ -127,11 +147,16 @@ public class Homescreen {
 	@AndroidFindBy(xpath = "(//android.widget.LinearLayout[@resource-id='in.AajTak.headlines:id/view_pager']//following::android.widget.ImageView[@resource-id='in.AajTak.headlines:id/slide_imageView'])[1]")
 	private AndroidElement firstGalleryInHomeScreen;
 	
+	@AndroidFindBy(xpath ="(//android.widget.ImageView[@content-desc=\"News Image\"])[1]")
+	private AndroidElement firsttopvideoArticle;
+	
+	
 	@AndroidFindBy(xpath = "(//android.view.ViewGroup[@resource-id='in.AajTak.headlines:id/clPhotoOrVideo'])")
 	private AndroidElement firstVideoorPhotoInHomeScreen;
 	
 	@AndroidFindBy(id = "in.AajTak.headlines:id/lav_loader")
 	private AndroidElement homeScreenLoading;
+	
 
 	// News Date/time
 
@@ -178,11 +203,19 @@ public class Homescreen {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='in.AajTak.headlines:id/tv_topnews_seemore']")
 	private AndroidElement otherStoriesfromSectionTxt;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='in.AajTak.headlines:id/tv_topnews_title' and @text='बड़ी ख़बरें']")
+	@AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"बड़ी खबरें\"]")
 	private AndroidElement badiKahbreinSection;
 
+	@AndroidFindBy(xpath="//android.widget.Button[@text='स्टोरी शेयर करें']")
+	private AndroidElement Sharestory;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='in.AajTak.headlines:id/tv_topnews_title' and @text='भारत']")
 	private AndroidElement bharathSection;
+	
+	@AndroidFindBy(xpath="//android.widget.LinearLayout[@content-desc=\"भारत\"]/android.widget.TextView")
+	private AndroidElement BharathSectioncopy;
+	
+	@AndroidFindBy(xpath="//android.widget.LinearLayout[@content-desc=\"होम\"]/android.widget.TextView")
+	private AndroidElement HomeSectionCopy;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='in.AajTak.headlines:id/tv_topnews_title' and @text='खेल']")
 	private AndroidElement khelSection;
@@ -315,6 +348,9 @@ public class Homescreen {
 	
 	@AndroidFindBy(xpath = "(//android.widget.TextView[@resource-id='in.AajTak.headlines:id/tvNewsTitle'])[1]")
 	private AndroidElement storyTitleInHomeScreen;
+	
+	@AndroidFindBy(xpath="(//android.widget.ImageView[@content-desc=\"News Image\"])[2]")
+	private AndroidElement SecondStoryTitle;
 
 	public static AndroidDriver<AndroidElement> getaDriver() {
 		return aDriver;
@@ -331,6 +367,16 @@ public class Homescreen {
 	public AndroidElement getOthersStickers() {
 		return othersStickers;
 	}
+	
+	
+
+	public AndroidElement getSharestory() {
+		return Sharestory;
+	}
+
+	public AndroidElement getSecondStoryTitle() {
+		return SecondStoryTitle;
+	}
 
 	public AndroidElement getStoryTitleInHomeScreen() {
 		return storyTitleInHomeScreen;
@@ -340,6 +386,12 @@ public class Homescreen {
 		return firstStoryDesc;
 	}
 	
+	
+	
+	public AndroidElement getVisualStory() {
+		return visualStory;
+	}
+
 	public AndroidElement getlargephotooffirststory() {
 		return largephotooffirststory;
 	}
@@ -366,6 +418,11 @@ public class Homescreen {
 	public AndroidElement getPhotoHeader() {
 		return photoHeader;
 	}
+	
+	
+	public AndroidElement getDailyCapsuleBannnerCopy() {
+		return dailyCapsuleBannnerCopy;
+	}
 
 	public AndroidElement getMorePhotos() {
 		return morePhotos;
@@ -373,6 +430,16 @@ public class Homescreen {
 
 	public AndroidElement getMorePhotosClick() {
 		return morePhotosClick;
+	}
+
+	public AndroidElement getFirstNewstitle() {
+		return FirstNewstitle;
+	}
+	
+	
+
+	public AndroidElement getFirsttopvideoArticle() {
+		return firsttopvideoArticle;
 	}
 
 	public AndroidElement getFirstGalleryInHomeScreen() {
@@ -383,12 +450,17 @@ public class Homescreen {
 		return videoTitle;
 	}
 	
+	
 	public AndroidElement getVideoTitle1() {
 		return videoTitle1;
 	}
 
 	public AndroidElement getVideoPlayButton() {
 		return videoPlayButton;
+	}
+
+	public AndroidElement getVisualStoryTitle() {
+		return visualStoryTitle;
 	}
 
 	public AndroidElement getFirstVideoInHomeScreen() {
@@ -421,6 +493,27 @@ public class Homescreen {
 	
 	public AndroidElement getDailyCapsuleBanner() {
 		return dailyCapsuleBanner;
+	}
+	
+
+	public AndroidElement getNewhamburgerIcon() {
+		return newhamburgerIcon;
+	}
+
+	public AndroidElement getFirstNews() {
+		return FirstNews;
+	}
+
+	public AndroidElement getStickerFrame() {
+		return stickerFrame;
+	}
+
+	public AndroidElement getStickerImage() {
+		return stickerImage;
+	}
+
+	public AndroidElement getStickerText() {
+		return stickerText;
 	}
 
 	public AndroidElement getDailycapBannerMessage() {
@@ -520,6 +613,22 @@ public class Homescreen {
 
 	public AndroidElement getBharathSection() {
 		return bharathSection;
+	}
+
+	
+	
+	public AndroidElement getHomeSectionCopy() {
+		return HomeSectionCopy;
+	}
+
+	
+	
+	public AndroidElement getRajnitiSection() {
+		return rajnitiSection;
+	}
+
+	public AndroidElement getBharathSectioncopy() {
+		return BharathSectioncopy;
 	}
 
 	public AndroidElement getKhelSection() {

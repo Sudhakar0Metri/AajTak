@@ -22,8 +22,8 @@ public class TC_AT_HomeScreen_015 extends Aajtak_app_Util {
 		launchApp();
 
 		// Complete Onboarding set up
-		compelteOnboarding();
-
+		//compelteOnboarding();
+		compelteOnboardingCopy();
 		// wait till homescreen is loaded
 		waitTillElementPresent(homescreen.getDailyCapsuleBanner(), 20);
 

@@ -5,16 +5,7 @@ import org.testng.annotations.Test;
 
 import com.aajtak.android.init.Aajtak_app_Util;
 
-/**
- * Date : 8 June 2021
- * 
- * Description: This is Homescreen module of AajTak Application. Description:
- * Verify that each story has Comments icon, Bookmark icon, Offline Story icon
- * and Share icon.
- * 
- * @author Archana George
- * @version 9.37(417)
- */
+
 @Listeners(com.aajtak.android.listener.MyExtentListners.class)
 public class TC_AT_HomeScreen_3Copy extends Aajtak_app_Util {
 
